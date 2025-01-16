@@ -12,24 +12,34 @@
 const a = true;
 
 switch (typeof a) {
-  case 'number': {
-    console.log('숫자');
-    break;
-  }
-  case 'string': {
-    console.log('문자열');
-    break;
-  }
   case 'boolean': {
     console.log('불리언');
     break;
   }
-  case 'undefined': {
-    console.log('언디파인');
+  case 'number': {
+    console.log('숫자');
     break;
+  }
+
+  case 'string': {
+    console.log('문자열');
+    break;
+  }
+  case 'undefined': {
+    console.log('언디파인드');
+    break;
+  }
+  case 'function': {
+    console.log('함수');
   }
   case 'object': {
     console.log('객체');
+  }
+  case 'symbol': {
+    console.log('심볼');
+  }
+  case 'bigint': {
+    console.log('빅인트');
     break;
   }
 }
