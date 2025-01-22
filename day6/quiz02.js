@@ -12,10 +12,30 @@
 function printClickEventLogs(logs) {
   const clickEventLogs = logs.filter((log) => log.type === 'click');
   clickEventLogs.forEach((log) => {
-    const date = log.date.toLocaleString();
+    const date = new Date(log.date).toLocaleString();
     console.log(`${log.type}: ${date}`);
   });
 }
+
+// // Ver1
+// function printClickEventLogs(logs) {
+//   logs.forEach((log) => {
+//     if (log.type === "click") {
+//       console.log(
+//         `${log.type} :: ${new Date(log.date).toLocaleString()}`
+//       );
+//     }
+//   });
+// }
+
+// // Ver 2
+// function _printClickEventLogs(logs) {
+//   logs
+//     .filter((log) => log.type === "click")
+//     .forEach((log) =>
+//       console.log(`${log.type} :: ${new Date(log.date).toLocaleString()}`)
+//     );
+// }
 
 printClickEventLogs([
   {

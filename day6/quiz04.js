@@ -12,8 +12,28 @@
  */
 
 function getSortedBooks(books) {
-  // 여기에 코드를 작성하세요 ...
+  const sortedBooks = books.toSorted((a, b) => {
+    let aTimeStamp = a.published.getTime();
+    let bTimeStamp = b.published.getTime();
+
+    if (aTimeStamp > bTimeStamp) {
+      return -1;
+    } else if (aTimeStamp < bTimeStamp) {
+      return 1;
+    } else {
+      return 0;
+    }
+  });
+
+  return sortedBooks;
 }
+// function getSortedBooks(books) {
+//   return books.toSorted((a, b) => {
+//     const aTimeStamp = a.published.getTime();
+//     const bTimeStamp = b.published.getTime();
+//     return bTimeStamp - aTimeStamp;
+//   });
+// }
 
 const sortedBooks = getSortedBooks([
   {

@@ -10,7 +10,11 @@
  */
 
 function getDiscountedMenus(menus) {
-  // 여기에 코드를 작성하세요 ...
+  menus.forEach((menu) => {
+    menu.discountedMenus = menu.price - 500;
+  });
+
+  return menus;
 }
 
 const discountedMenus = getDiscountedMenus([
