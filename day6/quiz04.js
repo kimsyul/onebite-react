@@ -27,6 +27,7 @@ function getSortedBooks(books) {
 
   return sortedBooks;
 }
+
 // function getSortedBooks(books) {
 //   return books.toSorted((a, b) => {
 //     const aTimeStamp = a.published.getTime();

@@ -10,12 +10,19 @@
  */
 
 function getDiscountedMenus(menus) {
-  menus.forEach((menu) => {
-    menu.discountedMenus = menu.price - 500;
-  });
-
-  return menus;
+  return menus.map((menu) => ({
+    ...menu,
+    discountedPrice: menu.price - 500,
+  }));
 }
+
+// function getDiscountedMenus(menus) {
+//   menus.forEach((menu) => {
+//     menu.discountedMenus = menu.price - 500;
+//   });
+
+//   return menus;
+// }
 
 const discountedMenus = getDiscountedMenus([
   { itemId: 1, name: '아메리카노', price: 3000 },
