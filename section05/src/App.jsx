@@ -1,6 +1,6 @@
-import './App.css';
 // 리액트에서는 ESM으로 불러와도 확장자 안써도됨
-import Register from './components/Register';
+import './App.css';
+import HookExam from './components/HookExam';
 
 // 리렌더링 되는 경우
 // 1. state
@@ -10,7 +10,7 @@ import Register from './components/Register';
 function App() {
   return (
     <>
-      <Register />
+      <HookExam />
     </>
   );
 }

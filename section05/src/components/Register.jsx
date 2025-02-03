@@ -18,20 +18,34 @@ const Register = () => {
   // 레퍼런스 객체는 current 프로퍼티에 현재 보관할 값을 담아두기만 하는 단순한 객체
   // 초기값도 설정 가능
   // 값이 변경되었다고 리렌더링 시키지 않음
+  // DOM을 조작하거나 컴포넌트 내부의 변수가 필요할 때 사용
   const countRef = useRef(0);
+  const inputRef = useRef();
+
+  // let count = 0;
 
   const onChange = (e) => {
     countRef.current++;
-    console.log(countRef.current);
+    // count++;
+    // console.log(countRef.current);
+    console.log(count);
     // 변수를 key값으로 설정할 경우 []로 묶어줘야 함!
     // 이벤트가 발생한 태그의 name 속성이 들어감
     setInput({ ...input, [e.target.name]: e.target.value });
   };
 
+  const onSubmit = () => {
+    if (input.name === '') {
+      // 이름을 입력하는 DOM 요소 포커스
+      inputRef.current.focus();
+    }
+  };
+
   return (
     <div>
       <div>
-        <input name="name" value={input.name} onChange={onChange} placeholder={'이름'} />
+        {/* ref에 ref객체 설정해놓으면 DOM 요소가 ref 객체에 저장됨!  */}
+        <input ref={inputRef} name="name" value={input.name} onChange={onChange} placeholder={'이름'} />
       </div>
 
       <div>
@@ -52,6 +66,8 @@ const Register = () => {
       <div>
         <textarea name="bio" value={input.bio} onChange={onChange} />
       </div>
+
+      <button onClick={onSubmit}>제출</button>
     </div>
   );
 };
