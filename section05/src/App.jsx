@@ -1,25 +1,16 @@
 import './App.css';
-import Button from './components/Button';
-import Footer from './components/Footer';
 // 리액트에서는 ESM으로 불러와도 확장자 안써도됨
-import Header from './components/Header';
-import Main from './components/Main';
+import Register from './components/Register';
+
+// 리렌더링 되는 경우
+// 1. state
+// 2. props
+// 3. 부모 컴포넌트 => 따라서 한 컴포넌트에서 관련없는 여러개의 state를 몰아넣는 것보다 다른 컴포넌트로 분리시키는 것이 성능에 좋음
 
 function App() {
-  const buttonProps = {
-    text: '메일',
-    color: 'red',
-    a: 1,
-    b: 2,
-  };
-
   return (
     <>
-      <Button {...buttonProps} />
-      <Button text={'카페'} color={'pink'} />
-      <Button text={'블로그'}>
-        <div>자식 요소</div>
-      </Button>
+      <Register />
     </>
   );
 }

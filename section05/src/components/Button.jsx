@@ -1,8 +1,15 @@
 const Button = ({ text, color, children }) => {
+  // 이벤트 객체
+  const onClickButton = (e) => {
+    console.log(e);
+    console.log(text);
+  };
+
+  // 이벤트 핸들러로 함수 넘길때는 호출 결과가 아닌 콜백 함수 넘기는 것처럼 함수의 이름만 넘겨야 함
   return (
     <>
-      <button style={{ color: color }}>
-        {text} - {color}
+      <button onClick={onClickButton} style={{ color: color }}>
+        {text} - {color.toUpperCase()}
         {children}
       </button>
     </>
